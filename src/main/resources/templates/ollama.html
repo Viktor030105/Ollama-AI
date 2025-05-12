@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ollama Chat</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script defer th:src="@{/script.js}"></script>
+</head>
+<body>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #dbe8fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 100px auto;
+        background-color: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .input-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus {
+        border-color: #4CAF50;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .response-box {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: monospace;
+        text-align: left;
+        white-space: pre-wrap;
+    }
+
+</style>
+<div class="container">
+    <h1>Ollama AI Chat</h1>
+    <div class="input-group">
+        <input type="text" id="prompt" placeholder="Enter your prompt" />
+        <button onclick="sendPrompt()">Send</button>
+    </div>
+    <pre id="response" class="response-box">AI response will appear here...</pre>
+</div>
+</body>
+</html>
+
